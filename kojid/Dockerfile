@@ -12,7 +12,6 @@ HEALTHCHECK --interval=5s --timeout=3s \
 #          /etc/yum.repos.d/fedora-updates.repo \
 #          /etc/yum.repos.d/fedora-updates-modular.repo
 
-RUN dnf5 update -y && dnf5 install koji-builder -y
-# RUN dnf update -y && dnf install koji-builder -y
+RUN dnf update -y && dnf install koji-builder -y
 
 CMD ["/usr/sbin/kojid", "--fg", "--force-lock", "--verbose"]
